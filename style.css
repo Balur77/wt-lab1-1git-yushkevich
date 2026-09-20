@@ -1,0 +1,435 @@
+/* =========================
+   Основные настройки
+========================= */
+
+:root {
+    --dark: #263238;
+    --dark-light: #455a64;
+    --beige: #e9e5dc;
+    --background: #f5f3ee;
+    --white: #ffffff;
+    --text: #30363a;
+    --muted: #737b80;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   Шапка
+========================= */
+
+.header {
+    background: var(--background);
+    border-bottom: 1px solid #dedbd4;
+}
+
+.navbar {
+    min-height: 75px;
+}
+
+.navbar-brand {
+    color: var(--dark);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand:hover {
+    color: var(--dark-light);
+}
+
+.nav-link {
+    color: var(--dark-light);
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.nav-link:hover {
+    color: #111;
+}
+
+
+/* =========================
+   Главный экран
+========================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.small-title,
+.section-label {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: var(--dark);
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 0.98;
+    font-weight: 700;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: var(--dark-light);
+}
+
+.hero .lead {
+    max-width: 500px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.custom-button {
+    padding: 13px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.custom-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   Фотография
+========================= */
+
+.photo-wrapper {
+    position: relative;
+    background: var(--white);
+    padding: 14px;
+    box-shadow: 0 20px 50px rgba(38, 50, 56, 0.12);
+    transform: rotate(2deg);
+    transition: 0.4s;
+}
+
+.photo-wrapper:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.summer-photo {
+    width: 100%;
+    height: 500px;
+    display: block;
+    object-fit: cover;
+    filter: saturate(0.85);
+}
+
+.photo-caption {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 5px 2px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   Секция "О лете"
+========================= */
+
+.about-section {
+    background: var(--white);
+    padding: 100px 0;
+}
+
+.about-section h2 {
+    color: var(--dark);
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   Карточки
+========================= */
+
+.info-card {
+    height: 100%;
+    padding: 30px;
+    background: var(--background);
+    border: 1px solid #e2dfd8;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(38, 50, 56, 0.08);
+}
+
+.card-number {
+    color: #9aa0a3;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.info-card h3 {
+    color: var(--dark);
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================
+   Подвал
+========================= */
+
+.footer {
+    background: var(--dark);
+    padding: 25px 0;
+}
+
+.footer p {
+    color: #c4c8ca;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* =========================
+   Адаптивность
+========================= */
+
+@media (max-width: 991px) {
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .photo-wrapper {
+        margin-top: 20px;
+    }
+
+    .summer-photo {
+        height: 450px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .hero .lead {
+        font-size: 16px;
+    }
+
+    .summer-photo {
+        height: 380px;
+    }
+
+    .about-section {
+        padding: 70px 0;
+    }
+
+    .about-section h2 {
+        font-size: 34px;
+    }
+
+    .info-card {
+        padding: 25px;
+    }
+}
+/* =========================
+   Фотогалерея
+========================= */
+
+.photo-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.photo-slider .summer-photo {
+    display: none;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    margin: 0;
+    animation: photoFade 0.5s ease;
+}
+
+.photo-slider .summer-photo.active {
+    display: block;
+}
+
+
+/* Плавное появление */
+
+@keyframes photoFade {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   Стрелки
+========================= */
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+    color: #263238;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s;
+
+    z-index: 5;
+}
+
+.slider-button:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.slider-prev {
+    left: 15px;
+}
+
+.slider-next {
+    right: 15px;
+}
+
+
+/* =========================
+   Точки
+========================= */
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    z-index: 5;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.dot.active {
+    width: 24px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+
+/* =========================
+   Мобильная версия
+========================= */
+
+@media (max-width: 576px) {
+
+    .photo-slider .summer-photo {
+        height: 380px;
+    }
+
+    .slider-button {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .slider-prev {
+        left: 10px;
+    }
+
+    .slider-next {
+        right: 10px;
+    }
+}
